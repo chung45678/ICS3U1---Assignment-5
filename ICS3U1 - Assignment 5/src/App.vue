@@ -3,13 +3,14 @@ import Footer from './components/Footer.vue';
 import Header from './components/Header.vue';
 import Feature from './components/Feature.vue';
 import Hero from './components/Hero.vue';
+
 </script>
 
 <template>
-  <Footer></Footer>
+  <Header></Header>
   <Hero></Hero>
-  <header></header>
   <Feature></Feature>
+  <Footer></Footer>
 </template>
 
 <style scoped>
