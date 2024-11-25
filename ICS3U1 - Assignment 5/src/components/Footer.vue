@@ -12,4 +12,28 @@
 </template>
 
 <style scoped>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+footer {
+    background-color: black;
+    color: grey;
+    padding: 20px;
+    text-align: center;
+}
+
+footer nav a {
+    color: darkcyan;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 14px;
+}
+
+footer nav a:hover {
+    color: turquoise
+}
+
 </style>
