@@ -1,12 +1,14 @@
 <script setup>
 import { RouterLink, useRouter } from 'vue-router';
 import { ref } from 'vue';
+import Header from '../components/Header.vue';
+import Footer from '../components/Footer.vue';
 
 const router = useRouter();
 const password = ref('');
 
 const handleLogin = () => {
-  if (password.value === "iloveyou") {
+  if (password.value === "chung") {
     router.push("/movies");
   } else {
     alert("Invalid Password");
@@ -15,129 +17,124 @@ const handleLogin = () => {
 </script>
 
 <template>
-  <div class="hero">
-    <div class="overlay">
-      <div class="navbar">
-        <h1>MyFlix</h1>
-        <RouterLink to="/register" class="button register">Register</RouterLink>
-      </div>
-      <div class="form-container">
-        <h2>Login to Your Account</h2>
-        <form @submit.prevent="handleLogin">
-          <input type="email" placeholder="Email" class="input-field" required />
-          <input v-model:="password" type="password" placeholder="Password" class="input-field" required />
-          <button type="submit" class="button login">Login</button>
-        </form>
-      </div>
+  <Header />
+  <div class="overlay">
+    <div class="form-container">
+      <h2>Login to Your Account</h2>
+      <form @submit.prevent="handleLogin">
+        <input type="email" placeholder="Email" class="input-field" required />
+        <input v-model:="password" type="password" placeholder="Password" class="input-field" required />
+        <button type="submit" class="button login">Login</button>
+      </form>
     </div>
   </div>
+  <Footer />
 </template>
 
 <style scoped>
-.hero {
-  background-image: url('https://source.unsplash.com/random/1920x1080/?movie');
-  /* Replace with your desired background */
-  background-size: cover;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-
-.overlay {
-  background-color: rgba(0, 0, 0, 0.7);
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  padding: 20px;
-  /* Added padding for better spacing */
-}
 
 .navbar {
   width: 100%;
+  padding: 20px;
   display: flex;
   justify-content: space-between;
-  padding: 20px;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .navbar h1 {
   font-size: 2rem;
-}
-
-.navbar .register {
-  background-color: #e50914;
   color: white;
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: background-color 0.3s;
+  margin: 0;
 }
 
-.navbar .register:hover {
-  background-color: #f40612;
+.navbar .button.register {
+  padding: 10px 20px;
+  border: 2px solid white;
+  background-color: transparent;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
+
+.navbar .button.register:hover {
+  background-color: white;
+  color: red;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  color: #333;
+}
+
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: black;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
 
 .form-container {
+  background-color: white;
+  padding: 30px 20px;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   text-align: center;
-  margin-top: 50px;
-  /* Adjusts spacing from the top */
+  width: 90%;
+  max-width: 400px;
 }
 
 .form-container h2 {
-  font-size: 2rem;
   margin-bottom: 20px;
+  color: red;
 }
 
 .input-field {
-  padding: 15px;
-  /* Increased padding for better touch targets */
-  width: 300px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  /* Added a border */
-  margin-bottom: 15px;
-  transition: border-color 0.3s;
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 2px solid red;
+  border-radius: 4px;
+  outline: none;
 }
 
 .input-field:focus {
-  border-color: #e50914;
-  /* Change border color on focus */
-  outline: none;
-  /* Remove default outline */
+  border-color: darkred;
+  box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
 }
 
-.login {
-  background-color: #e50914;
+.button.login {
+  width: 100%;
+  padding: 10px;
+  background-color: red;
   color: white;
-  padding: 10px 20px;
+  text-transform: uppercase;
+  font-weight: bold;
   border: none;
-  border-radius: 5px;
-  font-size: 1rem;
+  border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s;
-  /* Added transform for hover effect */
+  transition: background-color 0.3s ease;
 }
 
-.login:hover {
-  background-color: #f40612;
-  transform: scale(1.05);
-  /* Slightly scale up on hover */
-}
-
-@media (max-width: 600px) {
-  .input-field {
-    width: 90%;
-    /* Make input fields responsive */
-  }
-
-  .navbar h1 {
-    font-size: 1.5rem;
-    /* Reduce font size on smaller screens */
-  }
+.button.login:hover {
+  background-color: darkred;
 }
 </style>
