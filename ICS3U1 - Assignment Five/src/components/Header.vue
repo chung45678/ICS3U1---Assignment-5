@@ -1,6 +1,6 @@
 <template>
   <div class="header">
-    <RouterLink to="/" class="logo-link"><img src="" class="logo" alt="Logo" /></RouterLink>
+    <RouterLink to="/" class="logo-link"><img src="/src/assets/logo.png" class="logo" alt="Logo" /></RouterLink>
     <ul>
       <li><a href="">Trending</a></li>
       <li><a href="">TV Shows</a></li>
@@ -19,7 +19,7 @@
 <style scoped>
 .header {
   background-color: #000000;
-  padding: 20px 20px;
+  padding: 10px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;

@@ -3,7 +3,7 @@
         <div class="info">
             <h1>Endless Entertainment, Made Just for You</h1>
             <p>Stream the best movies and TV shows on any device, anytime, anywhere. Experience the magic of entertainment tailored to your taste.</p>
-            <a href="" class="start-button">Get Started</a>
+            <RouterLink to="/register" class = "entry">Get Started</RouterLink>\
         </div>
     </div>
 </template>
@@ -37,7 +37,7 @@
   line-height: 1.6;
 }
 
-.start-button {
+.entry {
   display: inline-block;
   padding: 10px 20px;
   background-color: red; 
@@ -45,11 +45,12 @@
   text-decoration: none;
   font-size: 1rem;
   border-radius: 6px;
+  
 
 }
 
-.start-button:hover {
-  background-color: #e63900; 
+.entry:hover {
+  background-color: #511400; 
 }
 
 </style>
