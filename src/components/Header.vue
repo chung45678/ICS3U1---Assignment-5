@@ -1,10 +1,17 @@
+<script setup>
+import { RouterLink } from 'vue-router';
+</script>
+
+
 <template>
   <div class="header">
     <RouterLink to="/" class="logo-link"><img src="/src/assets/logo.png" class="logo" alt="Logo" /></RouterLink>
     <ul>
       <li><a href="">Trending</a></li>
       <li><a href="">TV Shows</a></li>
-      <li><a href="">Movies</a></li>
+      <li>
+        <RouterLink to="/movies" class = "movies">Movies</RouterLink>
+      </li>
       <li>
         <RouterLink to="/register" class="entry">Join Now</RouterLink>
       </li>
